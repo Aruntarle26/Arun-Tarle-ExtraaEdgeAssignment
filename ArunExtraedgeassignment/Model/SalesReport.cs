@@ -5,7 +5,7 @@ namespace ArunExtraedgeassignment.Model
     public class SalesReport
     {
         public int BrandId { get; set; }
-        public int BrandName { get; set; }
+        public string BrandName { get; set; }
         [DataType(DataType.Date)]
         public DateTime FromDate { get; set; }
         [DataType(DataType.Date)]

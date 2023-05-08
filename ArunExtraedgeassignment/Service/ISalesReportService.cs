@@ -1,8 +1,8 @@
 ﻿using ArunExtraedgeassignment.Model;
 
-namespace ArunExtraedgeassignment.Repository
+namespace ArunExtraedgeassignment.Service
 {
-    public interface ISalesReportReository
+    public interface ISalesReportService
     {
         IEnumerable<SalesReport> GetSalesMonthlyReport(DateTime fromDate, DateTime toDate);
     }
