@@ -43,18 +43,18 @@ namespace ArunExtraedgeassignment.Repository
                           join m in db.Mobiles on b.BrandId equals m.BrandId
                           join s in db.Sales on m.MobileId  equals s.MobileId
                           where s.SellDate >= fromDate && s.SellDate <= toDate
-                         
-                          
 
-                         
+
+
+
                           select new BrandWiseMobile
                           {
-                             
+
                               BrandName = b.BrandName,
-                              BrandId=b.BrandId,
-                              Quantity=s.Quantity
-                             // mobileId=x.FirstOrDefault(a=>a.BrandId==m)
-                             
+                              BrandId = b.BrandId,
+                              Quantity = s.Quantity
+                              // mobileId=x.FirstOrDefault(a=>a.BrandId==m)
+
                           }).ToList();
 
             var r = (from x in result
