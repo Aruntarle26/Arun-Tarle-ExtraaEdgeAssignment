@@ -52,7 +52,7 @@ namespace ArunExtraedgeassignment.Repository
                 c.MobilePrice = mob.MobilePrice;
                 c.BrandId = mob.BrandId;
                 c.Model = mob.Model;
-                c.ModelDescription = mob.ModelDescription;
+                c.MobileDescription = mob.MobileDescription;
 
                 result = db.SaveChanges();
             }

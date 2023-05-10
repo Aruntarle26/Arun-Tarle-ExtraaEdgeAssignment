@@ -9,9 +9,11 @@ namespace ArunExtraedgeassignment.Controllers
     public class SalesReportController : ControllerBase
     {
         private readonly ISalesReportService service;
-        public SalesReportController(ISalesReportService service)
+        private readonly IMobileBrandWiseSalesReportService service2;
+        public SalesReportController(ISalesReportService service, IMobileBrandWiseSalesReportService service2)
         {
             this.service = service;
+            this.service2 = service2;
         }
         [HttpGet]
         [Route("GetSalesMonthlyReport")]
@@ -20,6 +22,19 @@ namespace ArunExtraedgeassignment.Controllers
             try
             {
                 return new ObjectResult(service.GetSalesMonthlyReport(fromDate,toDate));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("MobilebrandWiseSalesReport")]
+        public IActionResult GetMobilebrandWiseSalesReport(DateTime fromDate, DateTime toDate)
+        {
+            try
+            {
+                return new ObjectResult(service2.MobilebrandWiseSalesReport(fromDate, toDate));
             }
             catch (Exception ex)
             {

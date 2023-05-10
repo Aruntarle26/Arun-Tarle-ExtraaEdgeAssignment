@@ -23,7 +23,7 @@ namespace ArunExtraedgeassignment.Repository
                             BrandName=b.BrandName,
                             MobileName=m.Model,
                             MobilePrice=m.MobilePrice,
-                            Description=m.ModelDescription
+                            Description=m.MobileDescription
                        }).ToList();
             return result;
         }

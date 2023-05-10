@@ -14,6 +14,7 @@ namespace ArunExtraedgeassignment.Model
         public string MobileName { get; set; }
         public string Description { get; set; }
         public int MobilePrice { get; set; }
+     
 
     }
 }

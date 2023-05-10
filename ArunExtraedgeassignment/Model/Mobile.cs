@@ -9,7 +9,7 @@ namespace ArunExtraedgeassignment.Model
         [Key]
         public int MobileId { get; set; }
         public string? Model { get; set; }
-        public string? ModelDescription { get; set; }
+        public string? MobileDescription { get; set; }
         public int MobilePrice { get; set; }
         public int BrandId { get; set; }
     }

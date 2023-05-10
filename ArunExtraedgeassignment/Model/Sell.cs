@@ -14,5 +14,6 @@ namespace ArunExtraedgeassignment.Model
         public int Discount { get; set; }
         public int FinalPrice { get; set; }
         public int MobileId { get; set; }
+        public int Quantity { get; set; }
     }
 }

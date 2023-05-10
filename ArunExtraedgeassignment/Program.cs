@@ -22,14 +22,24 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddControllers();
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 builder.Services.AddScoped<IBrandService, BrandService>();
+
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+
 builder.Services.AddScoped<IMobileRepository, MobileRepository>();
 builder.Services.AddScoped<IMobileService, MobileService>();
-builder.Services.AddScoped<ISalesReportReository, SalesReportRepository>();
-builder.Services.AddScoped<ISalesReportService, SalesReportService>();
+
 builder.Services.AddScoped<ISellRepository, SellRepository>();
 builder.Services.AddScoped<ISellService, SellService>();
+
+builder.Services.AddScoped<ISalesReportReository, SalesReportRepository>();
+builder.Services.AddScoped<ISalesReportService, SalesReportService>();
+
+builder.Services.AddScoped<IProfitLossRepository, ProfitLossRepository>();
+builder.Services.AddScoped<IProfitLossService, ProfitLossService>();
+builder.Services.AddScoped<IMobilebrandWiseSalesReportRepository, MobilebrandWiseSalesReportRepository>();
+builder.Services.AddScoped<IMobileBrandWiseSalesReportService, MobileBrandWiseSalesReportService>();
+
 
 
 builder.Services.AddSwaggerGen(c =>

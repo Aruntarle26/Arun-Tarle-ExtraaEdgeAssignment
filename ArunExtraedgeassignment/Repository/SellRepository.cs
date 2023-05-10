@@ -55,7 +55,7 @@ namespace ArunExtraedgeassignment.Repository
                 c.FinalPrice = sell.FinalPrice;
                 c.CustomerId = sell.CustomerId;
                 c.SellDate = sell.SellDate;
-
+                c.Quantity = sell.Quantity;
 
                 result = db.SaveChanges();
             }
