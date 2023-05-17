@@ -30,7 +30,7 @@ namespace ArunExtraedgeassignment.Controllers
             {
                 users = new UserModel { UserName = "Arun Tarle" };
             }
-            return user;
+            return users;
         }
         private string GenerateToken(UserModel user)
         {
