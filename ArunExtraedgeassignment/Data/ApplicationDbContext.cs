@@ -14,5 +14,7 @@ namespace ArunExtraedgeassignment.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Mobile> Mobiles { get; set; }
         public DbSet<Sell> Sales { get; set; }
+        public DbSet<LoginOutput> LoginOutputs { get; set; }
+        public DbSet<UserModel> Users { get; set; }
     }
 }

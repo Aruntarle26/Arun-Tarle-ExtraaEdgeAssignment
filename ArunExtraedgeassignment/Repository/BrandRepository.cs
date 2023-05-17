@@ -38,8 +38,7 @@ namespace ArunExtraedgeassignment.Repository
 
         public Brand GetBrandById(int id)
         {
-            var brand = db.Brands.Where(x => x.BrandId == id).FirstOrDefault();
-            return brand;
+            return db.Brands.Where(x => x.BrandId == id).FirstOrDefault();
         }
 
         public int UpdateBrand(Brand brand)
