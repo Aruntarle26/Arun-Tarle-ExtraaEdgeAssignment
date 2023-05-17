@@ -14,31 +14,50 @@ namespace ArunExtraedgeassignment.Controllers
     public class LoginController : ControllerBase
     {
         private IConfiguration _config;
-        private readonly ILoginService service;
+       // private readonly ILoginService service;
 
-        public LoginController(IConfiguration config, ILoginService service)
+        public LoginController(IConfiguration config)
         {
             _config = config;
-            this.service = service;
+           // this.service = service;
+        }
+        //[AllowAnonymous]
+       
+        private UserModel AuthenticateUser(UserModel user)
+        {
+            UserModel users = null;
+            if(user.UserName=="Admin" && user.Password=="12345")
+            {
+                users = new UserModel { UserName = "Arun Tarle" };
+            }
+            return user;
+        }
+        private string GenerateToken(UserModel user)
+        {
+            var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"], _config["Jwt:Audience"],null,
+                expires:DateTime.Now.AddMinutes(1),
+                signingCredentials: credentials);
+            return new JwtSecurityTokenHandler().WriteToken(token);
+
         }
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] UserModel login)
+        public IActionResult Login(UserModel user)
         {
-           // IActionResult response = Unauthorized();
-            var user = service.Add(login);
-
-            /*if (user != null)
+            IActionResult response = Unauthorized();
+            var user1 = AuthenticateUser(user);
+            if(user1 !=null)
             {
-                var tokenString = GenerateJSONWebToken(user);
-                response = Ok(new { token = tokenString });
-            }*/
+                var token=GenerateToken(user1);
+                response=Ok(new {token=token});
+            }
 
-            return Ok(user);
+            return response;
         }
 
-       
 
-       
+
     }
 }

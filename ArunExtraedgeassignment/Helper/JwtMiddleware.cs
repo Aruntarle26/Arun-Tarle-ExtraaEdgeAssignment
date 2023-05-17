@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ArunExtraedgeassignment.Helper
 {
-    public class JwtMiddleware
+   /* public class JwtMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly AppSettings _appSettings;
@@ -44,5 +44,5 @@ namespace ArunExtraedgeassignment.Helper
             }
             catch { }
         }
-    }
+    }*/
 }
